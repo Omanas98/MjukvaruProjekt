@@ -1,0 +1,22 @@
+.header_image{
+    background-image: url("https://lirp.cdn-website.com/d17c567b/dms3rep/multi/opt/cleaning_bg-1920w.jpg");
+    height: 380px;
+    width: 100%;
+    object-fit: fit;
+  }
+  
+  .header-title{
+    font-weight: 600;
+    color: black;
+    font-size: 8vw;
+  }
+  
+  .flex-nav{
+    display: flex;
+  }
+  
+  .header-right{
+    display: flex;
+    justify-content: end;
+  }
+  
