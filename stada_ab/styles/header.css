@@ -1,8 +1,9 @@
 .header_image{
     background-image: url("https://lirp.cdn-website.com/d17c567b/dms3rep/multi/opt/cleaning_bg-1920w.jpg");
-    height: 380px;
+    height: 280px;
     width: 100%;
     object-fit: fit;
+    opacity: 82%;
   }
   
   .header-title{
@@ -18,5 +19,18 @@
   .header-right{
     display: flex;
     justify-content: end;
+  }
+  
+  .navbar hr{
+    border: none;
+    height: 1px;
+    text-align: left;
+    width: 100%
+  }
+
+  .navigation{
+    font-size: 2vw;
+    margin-left: 2vw;
+    margin-right: 4vw;
   }
   

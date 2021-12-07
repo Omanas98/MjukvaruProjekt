@@ -1,0 +1,67 @@
+
+.login-page {
+      min-height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.login-form {
+      /* the padding fixes margin-top in child-elements causing a scrollbar in body */
+      padding: 8px; 
+      color: white;
+
+}
+
+.login-form section {
+      margin: 10px 0;
+      position: relative;
+}
+
+.login-form button {
+      color: inherit; /* Will use whatever the parent uses, e.g white */
+      background: transparent;
+      border: 1px solid white;
+}
+
+.login-form button:active {
+      color: inherit; /* Will use whatever the parent uses, e.g white */
+      background: transparent;
+      border: 1px solid white;
+}
+
+.login-form label {
+      transition: top 200ms ease-out, font-size 200ms, opacity 200ms;
+      opacity: 0.5;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      cursor: text;
+      user-select: none;
+}
+
+.login-form input:not(:placeholder-shown) + label {
+      opacity: 0.8;
+      top: -8px;
+      font-size: 10px;
+}
+
+.login-form input:placeholder-shown {
+      user-select: none;
+}
+
+.login-form input {
+      color: inherit;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      outline: none;
+}
+
+
+@keyframes autofill {
+      to {
+            color: white;
+            background: transparent;
+      }
+}
