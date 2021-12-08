@@ -1,22 +1,53 @@
-.header_image{
-    background-image: url("https://lirp.cdn-website.com/d17c567b/dms3rep/multi/opt/cleaning_bg-1920w.jpg");
-    height: 380px;
-    width: 100%;
-    object-fit: fit;
-  }
-  
-  .header-title{
-    font-weight: 600;
-    color: black;
-    font-size: 8vw;
-  }
-  
-  .flex-nav{
-    display: flex;
-  }
-  
-  .header-right{
-    display: flex;
-    justify-content: end;
-  }
-  
+.header_image {
+  background-image: url("https://lirp.cdn-website.com/d17c567b/dms3rep/multi/opt/cleaning_bg-1920w.jpg");
+  height: 280px;
+  width: 100%;
+  object-fit: fit;
+  opacity: 82%;
+}
+
+.header-title {
+  font-weight: 600;
+  color: black;
+  font-size: 6vw;
+  opacity: 100%;
+}
+
+.flex-nav {
+  display: flex;
+}
+
+.header-right {
+  display: flex;
+  justify-content: end;
+}
+
+.navbar hr {
+  margin: 0;
+  border: none;
+  height: 1px;
+  text-align: left;
+  width: 100%;
+}
+
+.navigation {
+  font-size: 1.6vw;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  margin-bottom: 0;
+  color: black;
+  font-weight: 650;
+}
+
+div > a {
+  border-radius: 12px;
+  padding: 14px 28px;
+  margin-right: 0.3vw;
+  color: #0f0f0f;
+  text-decoration: none;
+}
+
+a:hover {
+  background: linear-gradient(to bottom right, #40E0D0, #4A148C);
+  border-radius: 12px;
+}

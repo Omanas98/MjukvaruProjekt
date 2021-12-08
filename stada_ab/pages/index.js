@@ -1,7 +1,6 @@
 export default function Home() {
   return (
-    <div >
-      <h3></h3>
-    </div>
+    <h1 className="page-body text-center mt-5">Error page is work in progress..</h1>
+
   )
 }

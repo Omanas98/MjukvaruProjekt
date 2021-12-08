@@ -2,6 +2,8 @@ import Layout from '../components/layout'
 import '../styles/style.css'
 import '../styles/header.css'
 import '../styles/footer.css'
+import '../styles/login.css'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
