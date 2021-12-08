@@ -1,3 +1,7 @@
 .website-body{
     background: linear-gradient(to bottom right, #40E0D0, #4A148C);
 }
+
+.page-body{
+    min-height: 70vh;
+}
