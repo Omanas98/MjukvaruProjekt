@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 function Header() {
     return (
         <header>
@@ -11,18 +13,37 @@ function Header() {
 
             <nav className=" navigation navbar navbar-expand-sm navbar-light">
                 <div className="navbar-nav w-100">
-                    <a className="nav-link" href="/hem">Hem</a>
-                    <a className="nav-link" href="/tjanster">Tjänster</a>
-                    <a className="nav-link" href="/about">Om oss</a>
+                    <div>
+                        <Link href="/" passHref>
+                            <a>Hem</a>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href="/tjanster" passHref>
+                            <a>Tjänster</a>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href="/about" passHref>
+                            <a>Om oss</a>
+                        </Link>
+                    </div>
                 </div>
                 <div className="navbar navbar-expand-sm navbar-light w-100 d-flex flex-row-reverse hr-underline">
                     <div className="navbar-nav">
-                        <a className="nav-link" href="/register">Registrera</a>
-                        <a className="nav-link" href="/login">Logga in</a>
+                        <div>
+                            <Link href="/register" passHref>
+                                <a>Registrera</a>
+                            </Link>
+                        </div><div>
+                            <Link href="/login" passHref>
+                                <a>Logga in</a>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </nav>
-            <hr/>
+            <hr />
         </header >
 
 
