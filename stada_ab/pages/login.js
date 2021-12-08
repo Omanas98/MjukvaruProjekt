@@ -4,13 +4,8 @@ function login() {
             <form className="login-form">
                   <h1 className="mb-3">Logga In</h1>
                   <section className="mb-3">
-                        <input id="firstname" type="text" placeholder=" " required></input>
-                        <label htmlFor="firstname">förnamn</label>
-                  </section>
-                  
-                  <section className="mb-3">
-                        <input id="lastname" type="text" placeholder=" " required></input>
-                        <label htmlFor="lastname">Efternamn</label>
+                        <input id="username" type="text" placeholder=" " required></input>
+                        <label htmlFor="username">Email</label>
                   </section>
 
                   <section className="mb-4">

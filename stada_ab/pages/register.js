@@ -20,10 +20,14 @@ function register() {
 
                   <section className="mb-3">
                         <input id="email" type="text" placeholder=" " required></input>
-                        <label htmlFor="email">E-mail</label>
+                        <label htmlFor="email">Email</label>
                   </section>
                   
-
+                  <section className="mb-3">
+                        <input id="cpr" type="text" placeholder=" " required></input>
+                        <label htmlFor="cpr">Personnummer 10 siffror</label>
+                  </section>
+                  
                   <section className="mb-4">
                         <input id="password" type="password" placeholder=" " required></input>
                         <label htmlFor="password">Lösenord</label>
