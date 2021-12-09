@@ -1,7 +1,28 @@
-function login() {
+import { useRouter } from "next/router";
+
+function login({ data }) {
+  const router = useRouter();
+  const verifyUser = async (event) => {
+    event.preventDefault();
+
+    let email = `${event.target.username.value}`;
+    let password = `${event.target.password.value}`;
+
+    data.map((user) => {
+      if (user.email == email) {
+        console.log(password, user.password);
+
+        if (user.password == password) {
+          console.log("success");
+          router.push("/");
+        }
+      }
+    });
+  };
+
   return (
     <section className="login-page page-body">
-      <form className="login-form">
+      <form onSubmit={verifyUser} className="login-form">
         <h1 className="mb-3">Logga In</h1>
         <section className="mb-3">
           <input id="username" type="text" placeholder=" " required></input>
