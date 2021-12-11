@@ -48,6 +48,6 @@ div > a {
 }
 
 a:hover {
-  background: linear-gradient(to bottom right, #40E0D0, #4A148C);
+  background: linear-gradient(to bottom right, #40e0d0, #4a148c);
   border-radius: 12px;
 }

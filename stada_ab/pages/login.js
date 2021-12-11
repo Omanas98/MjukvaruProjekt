@@ -1,7 +1,10 @@
 import { useRouter } from "next/router";
+import { useState, createContext, useMemo } from "react";
 
+let inne = false;
 function login({ data }) {
   const router = useRouter();
+
   const verifyUser = async (event) => {
     event.preventDefault();
 
@@ -14,6 +17,7 @@ function login({ data }) {
 
         if (user.password == password) {
           console.log("success");
+          inne = true;
           router.push("/");
         }
       }
@@ -53,3 +57,10 @@ export async function getStaticProps() {
     },
   };
 }
+
+export const LoginContext = createContext();
+export const StateProvider = ({ children }) => {
+  return (
+    <LoginContext.Provider value={{ inne }}>{children}</LoginContext.Provider>
+  );
+};
