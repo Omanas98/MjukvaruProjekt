@@ -19,13 +19,10 @@ function Header() {
       <nav className=" navigation navbar navbar-expand-sm navbar-light">
         <div className="navbar-nav w-100">
           <Link className="nav-link" href="/">
-            Hem
+            Bokade städningar
           </Link>
           <Link className="nav-link" href="/tjanster">
             Tjänster
-          </Link>
-          <Link className="nav-link" href="/about">
-            Om oss
           </Link>
           <Link className="nav-link" href="/newBooking">
             Boka städning
