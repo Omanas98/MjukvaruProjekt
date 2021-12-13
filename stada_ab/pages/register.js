@@ -1,4 +1,6 @@
+import { useRouter } from "next/router";
 function register() {
+  const router = useRouter();
   const submitContact = async (event) => {
     event.preventDefault();
     try {
@@ -17,6 +19,7 @@ function register() {
           password: `${event.target.password.value}`,
         }),
       });
+      router.push("/login");
     } catch (error) {
       console.log(error);
     }
