@@ -18,7 +18,7 @@ function Header() {
 
       <nav className=" navigation navbar navbar-expand-sm navbar-light">
         <div className="navbar-nav w-100">
-          <Link className="nav-link" href="/hem">
+          <Link className="nav-link" href="/">
             Hem
           </Link>
           <Link className="nav-link" href="/tjanster">
@@ -26,6 +26,9 @@ function Header() {
           </Link>
           <Link className="nav-link" href="/about">
             Om oss
+          </Link>
+          <Link className="nav-link" href="/newBooking">
+            Boka städning
           </Link>
         </div>
         <div className="navbar navbar-expand-sm navbar-light w-100 d-flex flex-row-reverse hr-underline">

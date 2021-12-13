@@ -2,13 +2,14 @@ import { useRouter } from "next/router";
 import { useState, createContext, useMemo } from "react";
 
 let inne = false;
+let email = "";
 function login({ data }) {
   const router = useRouter();
 
   const verifyUser = async (event) => {
     event.preventDefault();
 
-    let email = `${event.target.username.value}`;
+    email = `${event.target.username.value}`;
     let password = `${event.target.password.value}`;
 
     data.map((user) => {
@@ -61,6 +62,8 @@ export async function getStaticProps() {
 export const LoginContext = createContext();
 export const StateProvider = ({ children }) => {
   return (
-    <LoginContext.Provider value={{ inne }}>{children}</LoginContext.Provider>
+    <LoginContext.Provider value={{ inne, email }}>
+      {children}
+    </LoginContext.Provider>
   );
 };
