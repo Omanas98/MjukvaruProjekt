@@ -1,64 +1,42 @@
-import { MongoClient } from "mongodb";
-import { useContext } from "react";
-import { LoginContext } from "../pages/login";
-import { useRouter } from "next/router";
-import Link from "next/link";
-
-let currentAccount;
-export default function Home(props) {
-  const { inne, email } = useContext(LoginContext);
-  const router = useRouter();
-  currentAccount = email;
-
-  let userBookings = props.bookings.filter(
-    (booking) => booking.userName === currentAccount
-  );
-
-  return (
-    <div class="row">
-      {userBookings.map((booking) => {
-        return (
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{booking.title}</h5>
-                <p class="card-text">{booking.address}</p>
-                <p class="card-text">{booking.date}</p>
-                <Link href={`/${booking.id}`} class="btn btn-primary">
-                  Details
-                </Link>
-              </div>
+function Home() {
+    return (
+        <div className="page-body mt-5 home-page">
+            <div className="mt-2">
+                <h3>Basic Städning</h3>
+                <p>
+                    Aliquam imperdiet quam ut porttitor egestas. Aliquam dictum arcu mollis, ultricies felis vel, elementum orci. Quisque faucibus, nulla eu consequat vulputate, felis dui rhoncus libero, ac dictum diam sapien nec justo. Cras commodo, orci vitae tempor mollis, neque diam ultrices ante, a dictum tortor diam et diam. Suspendisse ac aliquam lorem, eu molestie eros. In tempor nisi condimentum iaculis tincidunt. Sed faucibus arcu in lobortis porta.
+                </p>
             </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+
+            <div className="mt-2">
+
+                <h3>Topp Städning</h3>
+                <p>
+                    Aliquam imperdiet quam ut porttitor egestas. Aliquam dictum arcu mollis, ultricies felis vel, elementum orci. Quisque faucibus, nulla eu consequat vulputate, felis dui rhoncus libero, ac dictum diam sapien nec justo. Cras commodo, orci vitae tempor mollis, neque diam ultrices ante, a dictum tortor diam et diam. Suspendisse ac aliquam lorem, eu molestie eros. In tempor nisi condimentum iaculis tincidunt. Sed faucibus arcu in lobortis porta.
+                </p>
+            </div>
+
+            <div className="mt-2">
+
+                <h3>Diamant Städning</h3>
+                <p>
+                    Aliquam imperdiet quam ut porttitor egestas. Aliquam dictum arcu mollis, ultricies felis vel, elementum orci. Quisque faucibus, nulla eu consequat vulputate, felis dui rhoncus libero, ac dictum diam sapien nec justo. Cras commodo, orci vitae tempor mollis, neque diam ultrices ante, a dictum tortor diam et diam. Suspendisse ac aliquam lorem, eu molestie eros. In tempor nisi condimentum iaculis tincidunt. Sed faucibus arcu in lobortis porta.
+                </p>
+            </div>
+
+            <div className="mt-2 mb-5">
+
+                <h3>Fönstertvätt</h3>
+                <p>
+                    Aliquam imperdiet quam ut porttitor egestas. Aliquam dictum arcu mollis, ultricies felis vel, elementum orci. Quisque faucibus, nulla eu consequat vulputate, felis dui rhoncus libero, ac dictum diam sapien nec justo. Cras commodo, orci vitae tempor mollis, neque diam ultrices ante, a dictum tortor diam et diam. Suspendisse ac aliquam lorem, eu molestie eros. In tempor nisi condimentum iaculis tincidunt. Sed faucibus arcu in lobortis porta.
+                </p>
+            </div>
+
+
+
+
+        </div>
+    );
 }
 
-export async function getServerSideProps() {
-  // fetch data from an API
-  const client = await MongoClient.connect(
-    "mongodb+srv://Abbas:1111@cluster0.mdcz3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-  );
-  const db = client.db();
-
-  const booknigsCollection = db.collection("bookings");
-
-  const bookningar = await booknigsCollection.find({}).toArray();
-
-  client.close();
-
-  return {
-    props: {
-      bookings: bookningar.map((meetup) => ({
-        title: meetup.title,
-        address: meetup.adress,
-        description: meetup.description,
-        date: meetup.date,
-        userName: meetup.userName,
-        id: meetup._id.toString(),
-      })),
-    },
-  };
-}
+export default Home;

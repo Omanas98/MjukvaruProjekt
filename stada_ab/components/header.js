@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { useContext } from "react";
 import { LoginContext } from "../pages/login";
 import Link from "next/Link";
@@ -19,19 +20,20 @@ function Header() {
       <nav className=" navigation navbar navbar-expand-sm navbar-light">
         <div className="navbar-nav w-100">
           <Link className="nav-link" href="/">
-            Bokade städningar
-          </Link>
-          <Link className="nav-link" href="/tjanster">
-            Tjänster
-          </Link>
-          <Link className="nav-link" href="/newBooking">
-            Boka städning
+            Hem
           </Link>
         </div>
         <div className="navbar navbar-expand-sm navbar-light w-100 d-flex flex-row-reverse hr-underline">
           {inne ? (
             <div className="navbar-nav">
-              <a className="nav-link" href="/login">
+
+              <Link className="nav-link" href="/newBooking">
+                Boka städning
+              </Link>
+              <Link className="nav-link" href="/tjanster">
+                Mina Städningar
+              </Link>
+              <a href="/login">
                 Logga ut
               </a>
             </div>

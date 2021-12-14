@@ -27,12 +27,12 @@ export default function Home(props) {
   };
 
   return (
-    <div class="card w-50">
-      <div class="card-body">
-        <h5 class="card-title">{props.bookingData.title}</h5>
-        <p class="card-text">Datum: {props.bookingData.date}</p>
-        <p class="card-text">Adress: {props.bookingData.adress}</p>
-        <p class="card-text">Beskrivning: {props.bookingData.description}</p>
+    <div className="card w-50">
+      <div className="card-body">
+        <h5 className="card-title">{props.bookingData.title}</h5>
+        <p className="card-text">Datum: {props.bookingData.date}</p>
+        <p className="card-text">Adress: {props.bookingData.adress}</p>
+        <p className="card-text">Beskrivning: {props.bookingData.description}</p>
         <button
           className="w-100"
           type="button"

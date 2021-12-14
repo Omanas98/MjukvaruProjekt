@@ -41,7 +41,7 @@
 
 div > a {
   border-radius: 12px;
-  padding: 14px 28px;
+  padding: 4px 12px;
   margin-right: 0.3vw;
   color: #0f0f0f;
   text-decoration: none;
@@ -50,4 +50,8 @@ div > a {
 a:hover {
   background: linear-gradient(to bottom right, #40e0d0, #4a148c);
   border-radius: 12px;
+}
+.a_khara_tagg{
+  color: black;
+  padding-top: auto;
 }
