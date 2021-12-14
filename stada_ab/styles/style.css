@@ -5,3 +5,8 @@
 .page-body{
     min-height: 70vh;
 }
+
+.home-page{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}

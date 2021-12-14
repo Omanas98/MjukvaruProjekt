@@ -43,8 +43,13 @@ function newBooking() {
         <h1 className="mb-3">Ny bokning</h1>
 
         <section className="mb-3">
-          <input id="title" type="text" placeholder=" " required></input>
-          <label htmlFor="title">Titel</label>
+          <h5>Välj din städning </h5><br/>
+          <select id="title">
+            <option value="Basic städning">Basic städning</option>
+            <option value="Topp städning">Topp städning</option>
+            <option value="Diamant städning">Diamant städning</option>
+            <option value="Fönster tvätt">Fönster tvätt</option>
+          </select>
         </section>
 
         <section className="mb-4">
