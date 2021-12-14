@@ -1,7 +1,31 @@
 import { MongoClient, ObjectId } from "mongodb";
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Home(props) {
+  const router = useRouter();
+  const [deleting, setDeleting] = useState(false);
+
+  const deleteBooking = async (bookingId) => {
+    setDeleting(true);
+
+    try {
+      await fetch("/api/bookings/Bookings", {
+        method: "DELETE",
+        body: bookingId,
+        contentType: "application/json",
+      });
+
+      // reset the deleting state
+      setDeleting(false);
+
+      return router.push("/");
+    } catch (error) {
+      // stop deleting state
+      return setDeleting(false);
+    }
+  };
+
   return (
     <div class="card w-50">
       <div class="card-body">
@@ -9,9 +33,13 @@ export default function Home(props) {
         <p class="card-text">Datum: {props.bookingData.date}</p>
         <p class="card-text">Adress: {props.bookingData.adress}</p>
         <p class="card-text">Beskrivning: {props.bookingData.description}</p>
-        <Link href="#" class="btn btn-primary">
-          Edit or delete
-        </Link>
+        <button
+          className="w-100"
+          type="button"
+          onClick={() => deleteBooking(props.bookingData.id)}
+        >
+          {deleting ? "Deleting" : "Delete"}
+        </button>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import { MongoClient } from "mongodb";
 import { useContext } from "react";
 import { LoginContext } from "../pages/login";
-import classes from "../styles/BookingItem.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
