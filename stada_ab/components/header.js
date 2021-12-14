@@ -30,7 +30,7 @@ function Header() {
               <Link className="nav-link" href="/newBooking">
                 Boka städning
               </Link>
-              <Link className="nav-link" href="/tjanster">
+              <Link className="nav-link" href="/my_bookings">
                 Mina Städningar
               </Link>
               <a href="/login">

@@ -34,7 +34,7 @@ function newBooking() {
       },
     });
 
-    router.push("/");
+    router.push("/my_bookings");
   }
 
   return (

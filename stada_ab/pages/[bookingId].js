@@ -19,7 +19,7 @@ export default function Home(props) {
       // reset the deleting state
       setDeleting(false);
 
-      return router.push("/");
+      return router.push("/my_bookings");
     } catch (error) {
       // stop deleting state
       return setDeleting(false);
