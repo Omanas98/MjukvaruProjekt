@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 let currentAccount;
-export default function tjanster (props) {
+export default function tjanster(props) {
   const { inne, email } = useContext(LoginContext);
   const router = useRouter();
   currentAccount = email;
@@ -16,6 +16,7 @@ export default function tjanster (props) {
 
   return (
     <div className="row page-body">
+      <h1>Dina bokningar</h1>
       {userBookings.map((booking) => {
         return (
           <div className="col-sm-4">

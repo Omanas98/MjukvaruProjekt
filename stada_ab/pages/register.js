@@ -3,23 +3,43 @@ function register() {
   const router = useRouter();
   const submitContact = async (event) => {
     event.preventDefault();
+
+    let enteredEmail = event.target.email.value;
+    let enteredPersonNumber = event.target.cpr.value;
+    let addAccountOrNot = true;
+
     try {
-      const res = await fetch("http://localhost:3000/api/users", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: `${event.target.name.value}`,
-          lastName: `${event.target.lastname.value}`,
-          adress: `${event.target.address.value}`,
-          email: `${event.target.email.value}`,
-          personNummer: `${event.target.cpr.value}`,
-          password: `${event.target.password.value}`,
-        }),
+      const registredAccounts = await fetch("http://localhost:3000/api/users");
+      const { data } = await registredAccounts.json();
+      let checkData = data.filter((user) => {
+        if (user.email === enteredEmail) {
+          console.log("email används redan");
+          alert("Email används redan");
+          addAccountOrNot = false;
+        } else if (user.personNummer === enteredPersonNumber) {
+          console.log("personNummer används redan");
+          alert("personNummer används redan");
+          addAccountOrNot = false;
+        }
       });
-      router.push("/login");
+
+      if (addAccountOrNot) {
+        const res = await fetch("http://localhost:3000/api/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: `${event.target.name.value}`,
+            lastName: `${event.target.lastname.value}`,
+            adress: `${event.target.address.value}`,
+            email: `${event.target.email.value}`,
+            personNummer: `${event.target.cpr.value}`,
+            password: `${event.target.password.value}`,
+          }),
+        });
+        router.push("/login");
+      }
     } catch (error) {
       console.log(error);
     }

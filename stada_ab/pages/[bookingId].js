@@ -32,13 +32,15 @@ export default function Home(props) {
         <h5 className="card-title">{props.bookingData.title}</h5>
         <p className="card-text">Datum: {props.bookingData.date}</p>
         <p className="card-text">Adress: {props.bookingData.adress}</p>
-        <p className="card-text">Beskrivning: {props.bookingData.description}</p>
+        <p className="card-text">
+          Beskrivning: {props.bookingData.description}
+        </p>
         <button
           className="w-100"
           type="button"
           onClick={() => deleteBooking(props.bookingData.id)}
         >
-          {deleting ? "Deleting" : "Delete"}
+          {deleting ? "Avbokar" : "Avboka"}
         </button>
       </div>
     </div>
