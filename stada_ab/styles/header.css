@@ -48,10 +48,12 @@ div > a {
 }
 
 a:hover {
-  background: linear-gradient(to bottom right, #40e0d0, #4a148c);
+  background: linear-gradient(to bottom right, #67c5f8);
+
   border-radius: 12px;
 }
-.a_khara_tagg{
+
+.a_khara_tagg {
   color: black;
   padding-top: auto;
 }
