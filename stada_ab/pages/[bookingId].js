@@ -31,6 +31,7 @@ export default function Home(props) {
       <div className="card-body">
         <h5 className="card-title">{props.bookingData.title}</h5>
         <p className="card-text">Datum: {props.bookingData.date}</p>
+        <p className="card-text">Tid: {props.bookingData.time}</p>
         <p className="card-text">Adress: {props.bookingData.adress}</p>
         <p className="card-text">
           Beskrivning: {props.bookingData.description}
@@ -89,10 +90,11 @@ export async function getStaticProps(context) {
     props: {
       bookingData: {
         id: selectedBooking._id.toString(),
-        title: selectedBooking.title,
+        title: selectedBooking.title, 
         adress: selectedBooking.adress,
         description: selectedBooking.description,
         date: selectedBooking.date,
+        time: selectedBooking.time,
       },
     },
   };

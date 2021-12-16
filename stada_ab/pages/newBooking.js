@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../pages/login";
+import Calendar from 'react-calendar';
 
 function newBooking() {
   const router = useRouter();
@@ -17,6 +18,7 @@ function newBooking() {
     let adress = `${event.target.address.value}`;
     let date = `${event.target.date.value}`;
     let description = `${event.target.Beskrivning.value}`;
+    let time = `${event.target.time.value}`;
 
     let data = {
       title: title,
@@ -24,6 +26,7 @@ function newBooking() {
       date: date,
       description: description,
       userName: email,
+      time: time,
     };
 
     const response = await fetch("/api/bookings/Bookings", {
@@ -60,6 +63,11 @@ function newBooking() {
         <section className="mb-4">
           <input id="date" type="date" placeholder=" " required></input>
           <label htmlFor="date">Datum</label>
+        </section>
+
+        <section className="mb-4">
+          <input id="time" type="time" placeholder=" " required></input>
+          <label htmlFor="time">Tid</label>
         </section>
 
         <section className="mb-4">
