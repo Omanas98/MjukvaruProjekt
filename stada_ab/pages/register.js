@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+
 function register() {
   const router = useRouter();
   const submitContact = async (event) => {
@@ -13,12 +15,10 @@ function register() {
       const { data } = await registredAccounts.json();
       let checkData = data.filter((user) => {
         if (user.email === enteredEmail) {
-          console.log("email används redan");
-          alert("Email används redan");
+          toast.error("Email används redan");
           addAccountOrNot = false;
         } else if (user.personNummer === enteredPersonNumber) {
-          console.log("personNummer används redan");
-          alert("personNummer används redan");
+          toast.error("personNummer används redan");
           addAccountOrNot = false;
         }
       });
@@ -47,8 +47,10 @@ function register() {
 
   return (
     <section className="login-page page-body">
+      <ToastContainer />
       <form onSubmit={submitContact} className="login-form">
         <h1 className="mb-3">Skapa konto</h1>
+
         <section className="mb-3">
           <input id="name" type="text" placeholder=" " required></input>
           <label htmlFor="firstname">Förnamn</label>

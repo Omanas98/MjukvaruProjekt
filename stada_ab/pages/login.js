@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, createContext, useMemo } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 let inne = false;
 let email = "";
@@ -19,15 +20,16 @@ function login({ data }) {
         inne = true;
         router.push("/");
       } else {
-        alert(" fel password");
+        toast.error(" fel lösenord");
       }
     } else {
-      alert("fel namn");
+      toast.error("fel namn");
     }
   };
 
   return (
     <section className="login-page page-body">
+      <ToastContainer />
       <form onSubmit={verifyUser} className="login-form">
         <h1 className="mb-3">Logga In</h1>
         <section className="mb-3">
