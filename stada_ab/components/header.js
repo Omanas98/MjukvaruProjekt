@@ -5,7 +5,6 @@ import Link from "next/Link";
 
 function Header() {
   const { inne } = useContext(LoginContext);
-  console.log(inne);
 
   return (
     <header>
@@ -26,16 +25,13 @@ function Header() {
         <div className="navbar navbar-expand-sm navbar-light w-100 d-flex flex-row-reverse hr-underline">
           {inne ? (
             <div className="navbar-nav">
-
               <Link className="nav-link" href="/newBooking">
                 Boka städning
               </Link>
               <Link className="nav-link" href="/my_bookings">
                 Mina Städningar
               </Link>
-              <a href="/login">
-                Logga ut
-              </a>
+              <a href="/login">Logga ut</a>
             </div>
           ) : (
             <div className="navbar-nav">

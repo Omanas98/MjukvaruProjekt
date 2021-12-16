@@ -12,17 +12,18 @@ function login({ data }) {
     email = `${event.target.username.value}`;
     let password = `${event.target.password.value}`;
 
-    data.map((user) => {
-      if (user.email == email) {
-        console.log(password, user.password);
-
-        if (user.password == password) {
-          console.log("success");
-          inne = true;
-          router.push("/");
-        }
+    let userNameChech = data.filter((user) => user.email === email);
+    if (userNameChech.length === 1) {
+      let passwordCheck = data.filter((user) => user.password === password);
+      if (passwordCheck.length === 1) {
+        inne = true;
+        router.push("/");
+      } else {
+        alert(" fel password");
       }
-    });
+    } else {
+      alert("fel namn");
+    }
   };
 
   return (
