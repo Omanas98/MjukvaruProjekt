@@ -15,7 +15,10 @@ function login({ data }) {
 
     let userNameChech = data.filter((user) => user.email === email);
     if (userNameChech.length === 1) {
-      let passwordCheck = data.filter((user) => user.password === password);
+      let passwordCheck = data.filter(
+        (user) => user.password === password && user.email === email
+      );
+
       if (passwordCheck.length === 1) {
         inne = true;
         router.push("/");
