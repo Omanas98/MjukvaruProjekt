@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import { LoginContext } from "../pages/login";
-import Calendar from 'react-calendar';
 
 function newBooking() {
   const router = useRouter();
@@ -46,7 +45,8 @@ function newBooking() {
         <h1 className="mb-3">Ny bokning</h1>
 
         <section className="mb-3">
-          <h5>Välj din städning </h5><br/>
+          <h5>Välj din städning </h5>
+          <br />
           <select id="title">
             <option value="Basic städning">Basic städning</option>
             <option value="Topp städning">Topp städning</option>
