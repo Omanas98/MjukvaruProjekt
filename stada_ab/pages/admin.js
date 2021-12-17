@@ -36,7 +36,7 @@ function register() {
             email: `${event.target.email.value}`,
             personNummer: `${event.target.cpr.value}`,
             password: `${event.target.password.value}`,
-            role: "Customer",
+            role: `${event.target.role.value}`,
           }),
         });
         router.push("/login");
@@ -81,6 +81,12 @@ function register() {
           <input id="password" type="password" placeholder=" " required></input>
           <label htmlFor="password">Lösenord</label>
         </section>
+
+        <select id="role">
+            <option value="Cleaner">Städare</option>
+            <option value="Admin">Admin</option>
+          </select>
+
         <button className="w-100" type="submit">
           Skapa Konto
         </button>
