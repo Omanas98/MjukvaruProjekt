@@ -90,7 +90,7 @@ export async function getStaticProps(context) {
     props: {
       bookingData: {
         id: selectedBooking._id.toString(),
-        title: selectedBooking.title, 
+        title: selectedBooking.title,
         adress: selectedBooking.adress,
         description: selectedBooking.description,
         date: selectedBooking.date,

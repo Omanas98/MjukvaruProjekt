@@ -82,15 +82,22 @@ function register() {
           <label htmlFor="password">Lösenord</label>
         </section>
 
-        <select id="role">
-            <option value="Cleaner">Städare</option>
-            <option value="Admin">Admin</option>
-          </select>
+        <select id="role" className="mb-3 w-50">
+          <option value="Cleaner">Städare</option>
+          <option value="Admin">Admin</option>
+        </select>
 
         <button className="w-100" type="submit">
           Skapa Konto
         </button>
+
       </form>
+
+      <div>
+        <a className="mt-5 ml-5" href="/all_users">
+          Se alla användare
+        </a>
+      </div>
     </section>
   );
 }

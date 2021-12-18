@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import { useContext } from "react";
 import { LoginContext } from "../pages/login";
 import Link from "next/Link";
@@ -47,6 +46,9 @@ function loginRole(role) {
           <Link className="nav-link" href="/my_bookings">
             Mina Städningar
           </Link>
+          <Link className="nav-link" href="/users_all'">
+            Lista Användarna
+          </Link>
           <a href="/login">Logga ut</a>
         </div>
       );
@@ -64,7 +66,7 @@ function loginRole(role) {
         </div>
       );
       break;
-      case "Cleaner":
+    case "Cleaner":
       return (
         <div className="navbar-nav">
           <Link className="nav-link" href="/newBooking">
