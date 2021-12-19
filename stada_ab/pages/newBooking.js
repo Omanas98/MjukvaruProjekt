@@ -26,6 +26,7 @@ function newBooking() {
       description: description,
       userName: email,
       time: time,
+      cleaner: "",
     };
 
     const response = await fetch("/api/bookings/Bookings", {

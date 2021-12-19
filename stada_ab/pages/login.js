@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 let inne = false;
 let email = "";
 let role = "";
+let name = "";
 function login({ data }) {
   const router = useRouter();
 
@@ -22,6 +23,7 @@ function login({ data }) {
 
       if (passwordCheck.length === 1) {
         role = passwordCheck[0].role;
+        name = passwordCheck[0].name;
         inne = true;
         router.push("/");
       } else {
@@ -70,7 +72,7 @@ export async function getStaticProps() {
 export const LoginContext = createContext();
 export const StateProvider = ({ children }) => {
   return (
-    <LoginContext.Provider value={{ inne, email, role }}>
+    <LoginContext.Provider value={{ inne, email, role, name }}>
       {children}
     </LoginContext.Provider>
   );
