@@ -39,7 +39,10 @@ function register() {
             role: `${event.target.role.value}`,
           }),
         });
-        router.push("/login");
+        let addRes = await res.json();
+        if (addRes.success) {
+          toast.success("Added user successfully");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -90,14 +93,7 @@ function register() {
         <button className="w-100" type="submit">
           Skapa Konto
         </button>
-
       </form>
-
-      <div>
-        <a className="mt-5 ml-5" href="/all_users">
-          Se alla användare
-        </a>
-      </div>
     </section>
   );
 }

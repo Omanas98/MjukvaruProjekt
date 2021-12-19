@@ -46,6 +46,9 @@ function loginRole(role) {
           <Link className="nav-link" href="/my_bookings">
             Mina Städningar
           </Link>
+          <Link className="nav-link" href="/allBookings">
+            Alla Bokningar
+          </Link>
           <Link className="nav-link" href="/users_all'">
             Lista Användarna
           </Link>

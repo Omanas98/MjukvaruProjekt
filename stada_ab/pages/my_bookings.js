@@ -5,14 +5,17 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 let currentAccount;
+
 export default function tjanster(props) {
-  const { inne, email } = useContext(LoginContext);
+  const { inne, email, role, name } = useContext(LoginContext);
   const router = useRouter();
   currentAccount = email;
+  console.log(name);
 
-  let userBookings = props.bookings.filter(
-    (booking) => booking.userName === currentAccount
-  );
+  let userBookings =
+    role === "Cleaner"
+      ? props.bookings.filter((booking) => booking.cleaner === name)
+      : props.bookings.filter((booking) => booking.userName === currentAccount);
 
   return (
     <div className="row page-body">
