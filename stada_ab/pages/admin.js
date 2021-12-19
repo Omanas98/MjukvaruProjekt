@@ -9,6 +9,7 @@ function register() {
     let enteredEmail = event.target.email.value;
     let enteredPersonNumber = event.target.cpr.value;
     let addAccountOrNot = true;
+    let role = `${event.target.role.value}`;
 
     try {
       const registredAccounts = await fetch("http://localhost:3000/api/users");
@@ -36,7 +37,7 @@ function register() {
             email: `${event.target.email.value}`,
             personNummer: `${event.target.cpr.value}`,
             password: `${event.target.password.value}`,
-            role: `${event.target.role.value}`,
+            role: role,
           }),
         });
         router.push("/login");

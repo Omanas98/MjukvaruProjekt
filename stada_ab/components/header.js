@@ -46,7 +46,7 @@ function loginRole(role) {
           <Link className="nav-link" href="/my_bookings">
             Mina Städningar
           </Link>
-          <Link className="nav-link" href="/users_all'">
+          <Link className="nav-link" href="/all_users">
             Lista Användarna
           </Link>
           <a href="/login">Logga ut</a>

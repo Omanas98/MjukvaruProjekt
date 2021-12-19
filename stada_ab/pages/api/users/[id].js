@@ -1,5 +1,6 @@
 import dbConnect from "../../../utils/dbConnect";
 import User from "../../../models/user";
+const ObjectId = require('mongodb').ObjectId;
 
 dbConnect();
 
@@ -41,7 +42,9 @@ export default async (req, res) => {
       break;
     case "DELETE":
       try {
-        const deleteduser = await User.deleteOne({ _id: id });
+        const deleteduser = await User.deleteOne({ 
+          '_id': ObjectId(req.body) 
+        });
 
         if (!deleteduser) {
           return res.status(400).json({ success: false });
