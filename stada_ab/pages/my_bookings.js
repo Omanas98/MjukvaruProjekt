@@ -13,8 +13,8 @@ export default function tjanster(props) {
   console.log(name);
 
   let userBookings =
-    role === "Cleaner"
-      ? props.bookings.filter((booking) => booking.cleaner === name)
+    role == "Cleaner"
+      ? props.bookings.filter((booking) => booking.cleaner == name)
       : props.bookings.filter((booking) => booking.userName === currentAccount);
 
   return (
@@ -60,6 +60,7 @@ export async function getServerSideProps() {
         address: meetup.adress,
         description: meetup.description,
         date: meetup.date,
+        cleaner: meetup.cleaner,
         userName: meetup.userName,
         id: meetup._id.toString(),
       })),

@@ -30,9 +30,8 @@ export default function user({ user }) {
         <div className="row">
           <h6 className="col-2">{user.name}</h6>
           <h6 className="col-2">{user.LastName}</h6>
-          <h6 className="col-2">{user.adress}</h6>
+          <h6 className="col-3">{user.adress}</h6>
           <h6 className="col-2">{user.personNummer}</h6>
-          <h6 className="col-2">{user.password}</h6>
           <h6 className="col-2">{user.role}</h6>
         </div>
       </div>
