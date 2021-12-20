@@ -49,7 +49,7 @@ function loginRole(role) {
           <Link className="nav-link" href="/allBookings">
             Alla Bokningar
           </Link>
-          <Link className="nav-link" href="/users_all'">
+          <Link className="nav-link" href="/all_users">
             Lista Användarna
           </Link>
           <a href="/login">Logga ut</a>
