@@ -2,7 +2,14 @@ import { MongoClient } from "mongodb";
 import { useContext } from "react";
 import { LoginContext } from "./login";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import styled from 'styled-components';
+
+
+const DetailsLink = styled.a`
+  color: black;
+  text-decoration: none;
+
+`
 
 let currentAccount;
 
@@ -29,9 +36,11 @@ export default function tjanster(props) {
                   <h5 className="card-title">{booking.title}</h5>
                   <p className="card-text">Adress: {booking.address}</p>
                   <p className="card-text">Datum: {booking.date}</p>
-                  <Link href={`/${booking.id}`} class="btn btn-primary w-25">
-                    Detaljer
-                  </Link>
+                  <button className="w-50 btn-info btn mt-3" type="button">
+                    <DetailsLink href={`/${booking.id}`} class="btn btn-primary w-25">
+                      Detaljer
+                    </DetailsLink>
+                  </button>
                 </div>
               </div>
             </div>
