@@ -32,6 +32,7 @@ function newBooking() {
       description: description,
       userName: localStorage.getItem("email"),
       time: time,
+      endTime: "",
       cleaner: "",
     };
 
