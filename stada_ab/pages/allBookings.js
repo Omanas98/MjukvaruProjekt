@@ -2,6 +2,13 @@ import BookingCard from "../components/BookingCard";
 import { MongoClient } from "mongodb";
 
 function allBookings(props) {
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
+
+      router.push("/login");
+    }
+  }
   return (
     <div className="page-body user-card mt-5 mb-5">
       <div>

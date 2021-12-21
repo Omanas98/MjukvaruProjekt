@@ -25,6 +25,10 @@ function login({ data }) {
         role = passwordCheck[0].role;
         name = passwordCheck[0].name;
         inne = true;
+        localStorage.setItem("inne", true);
+        localStorage.setItem("email", `${event.target.username.value}`);
+        localStorage.setItem("role", passwordCheck[0].role);
+        localStorage.setItem("name", passwordCheck[0].name);
         router.push("/");
       } else {
         toast.error(" fel lösenord");
