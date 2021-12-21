@@ -27,22 +27,21 @@ export default function Home(props) {
   };
 
   return (
-    <div className="card w-50">
-      <div className="card-body">
-        <h5 className="card-title">{props.bookingData.title}</h5>
-        <p className="card-text">Datum: {props.bookingData.date}</p>
-        <p className="card-text">Tid: {props.bookingData.time}</p>
-        <p className="card-text">Adress: {props.bookingData.adress}</p>
-        <p className="card-text">
+    <div className="container page-body">
+      <div className="card-body card w-50 ">
+        <h5 className="booking-title">{props.bookingData.title}</h5>
+        <p className="booking-text">Datum: {props.bookingData.date}</p>
+        <p className="booking-text">Tid: {props.bookingData.time}</p>
+        <p className="booking-text">Adress: {props.bookingData.adress}</p>
+        <p className="booking-text">
           Beskrivning: {props.bookingData.description}
         </p>
-        <button
-          className="w-100"
-          type="button"
-          onClick={() => deleteBooking(props.bookingData.id)}
-        >
+
+        <button className="w-50 btn-danger btn mt-3" type="button"
+          onClick={() => deleteBooking(props.bookingData.id)}>
           {deleting ? "Avbokar" : "Avboka"}
         </button>
+
       </div>
     </div>
   );

@@ -18,24 +18,26 @@ export default function tjanster(props) {
       : props.bookings.filter((booking) => booking.userName === currentAccount);
 
   return (
-    <div className="row page-body">
-      <h1>Dina bokningar</h1>
-      {userBookings.map((booking) => {
-        return (
-          <div className="col-sm-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{booking.title}</h5>
-                <p className="card-text">{booking.address}</p>
-                <p className="card-text">{booking.date}</p>
-                <Link href={`/${booking.id}`} class="btn btn-primary">
-                  Details
-                </Link>
+    <div className="page-body container">
+      <div className="row">
+        <h1>Dina bokningar</h1>
+        {userBookings.map((booking) => {
+          return (
+            <div className="col-4 ml-2 mt-5">
+              <div className="card">
+                <div className="card-body row">
+                  <h5 className="card-title">{booking.title}</h5>
+                  <p className="card-text">Adress: {booking.address}</p>
+                  <p className="card-text">Datum: {booking.date}</p>
+                  <Link href={`/${booking.id}`} class="btn btn-primary w-25">
+                    Detaljer
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
