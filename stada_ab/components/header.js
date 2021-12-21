@@ -17,7 +17,7 @@ function Header() {
 
       <nav className=" navigation navbar navbar-expand-sm navbar-light">
         <div className="navbar-nav w-100">
-          <Link className="nav-link" href="/">
+          <Link className="header-hem" href="/">
             Hem
           </Link>
         </div>

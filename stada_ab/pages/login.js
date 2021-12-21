@@ -35,7 +35,7 @@ function login({ data }) {
   };
 
   return (
-    <section className="login-page page-body">
+    <section className="login-page">
       <ToastContainer />
       <form onSubmit={verifyUser} className="login-form">
         <h1 className="mb-3">Logga In</h1>
