@@ -34,7 +34,8 @@ export default function user({ user }) {
           <h6 className="col-2">{user.adress}</h6>
 
           <h6 className="col-2">{user.personNummer}</h6>
-          <h6 className="col-2">{user.role}</h6>
+          <h6 className="col-2">{user.password}</h6>
+          <h6 className="col-1">{user.role}</h6>
         </div>
       </div>
       <div className="col-1">
@@ -48,6 +49,7 @@ export default function user({ user }) {
           </button>
         </div>
       </div>
+      <br /> <br />
     </div>
   );
 }

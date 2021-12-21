@@ -25,6 +25,10 @@ function login({ data }) {
         role = passwordCheck[0].role;
         name = passwordCheck[0].name;
         inne = true;
+        localStorage.setItem("inne", true);
+        localStorage.setItem("email", `${event.target.username.value}`);
+        localStorage.setItem("role", passwordCheck[0].role);
+        localStorage.setItem("name", passwordCheck[0].name);
         router.push("/");
       } else {
         toast.error(" fel lösenord");
@@ -35,7 +39,7 @@ function login({ data }) {
   };
 
   return (
-    <section className="login-page page-body">
+    <section className="login-page">
       <ToastContainer />
       <form onSubmit={verifyUser} className="login-form">
         <h1 className="mb-3">Logga In</h1>
