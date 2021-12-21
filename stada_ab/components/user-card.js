@@ -34,13 +34,17 @@ export default function user({ user }) {
           <h6 className="col-2">{user.adress}</h6>
 
           <h6 className="col-2">{user.personNummer}</h6>
-          <h6 className="col-2">{user.role}</h6>
+          <h6 className="col-2">{user.password}</h6>
+          <h6 className="col-1">{user.role}</h6>
         </div>
       </div>
       <div className="col-1">
         <div className="row">
-          <button type="button" className="col-12 btn-danger"
-            onClick={() => deleteUser(user._id)}>
+          <button
+            type="button"
+            className="col-12 btn-danger"
+            onClick={() => deleteUser(user._id)}
+          >
             {deleting ? "Ta bort" : "Ta bort"}
           </button>
         </div>

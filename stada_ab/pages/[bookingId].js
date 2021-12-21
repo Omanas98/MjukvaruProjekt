@@ -6,6 +6,16 @@ export default function Home(props) {
   const router = useRouter();
   const [deleting, setDeleting] = useState(false);
 
+
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
+
+      router.push("/login");
+    }
+  }
+
+
   const deleteBooking = async (bookingId) => {
     setDeleting(true);
 
