@@ -26,6 +26,7 @@ function newBooking() {
       description: description,
       userName: email,
       time: time,
+      endTime: "",
       cleaner: "",
     };
 

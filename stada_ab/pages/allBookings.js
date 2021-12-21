@@ -10,7 +10,7 @@ function allBookings(props) {
           {props.bookings.map((booking) => {
             return (
               <div>
-                <BookingCard booking={booking} cleaners={props.cleaners} />
+                <BookingCard allBookings={props.bookings} booking={booking} cleaners={props.cleaners} />
               </div>
             );
           })}
@@ -40,6 +40,7 @@ export async function getServerSideProps() {
   return {
     props: {
       bookings: bookningar.map((meetup) => ({
+        endTime: meetup.endTime,
         title: meetup.title,
         address: meetup.adress,
         description: meetup.description,

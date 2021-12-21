@@ -59,7 +59,9 @@ async function handler(req, res) {
         {
           _id: ObjectId(req.body.id),
         },
-        { $set: { cleaner: req.body.cleaner } }
+        {
+          $set: { cleaner: req.body.cleaner, endTime: req.body.endTime },
+        }
       );
 
       if (!user) {
