@@ -39,15 +39,13 @@ export default function user({ user }) {
       </div>
       <div className="col-1">
         <div className="row">
-          <button
-            type="button"
-            className="col-12 btn-danger"
-            onClick={() => deleteUser(user._id)}
-          >
+          <button type="button" className="col-12 btn-danger"
+            onClick={() => deleteUser(user._id)}>
             {deleting ? "Ta bort" : "Ta bort"}
           </button>
         </div>
       </div>
+      <br /> <br />
     </div>
   );
 }
