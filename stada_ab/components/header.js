@@ -15,8 +15,8 @@ function Header() {
         </div>
       </div>
 
-      <nav className=" navigation navbar navbar-expand-sm navbar-light">
-        <div className="navbar-nav w-100">
+      <nav className=" navigation navbar navbar-expand-md navbar-light">
+        <div className="navbar-nav">
           <Link className="header-hem" href="/">
             Hem
           </Link>
