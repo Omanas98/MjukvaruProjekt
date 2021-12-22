@@ -17,13 +17,27 @@ export default function tjanster(props) {
   const { inne, email, role, name } = useContext(LoginContext);
   const router = useRouter();
   currentAccount = email;
-  console.log(name);
 
-  let userBookings =
-    role == "Cleaner"
-      ? props.bookings.filter((booking) => booking.cleaner == name)
-      : props.bookings.filter((booking) => booking.userName === currentAccount);
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
 
+      router.push("/login");
+    }
+  }
+
+  let userBookings = [];
+
+  if (typeof window !== "undefined") {
+    userBookings =
+      localStorage.getItem("role") == "Cleaner"
+        ? props.bookings.filter(
+            (booking) => booking.cleaner == localStorage.getItem("name")
+          )
+        : props.bookings.filter(
+            (booking) => booking.userName === localStorage.getItem("email")
+          );
+  }
   return (
     <div className="page-body container">
       <div className="row">

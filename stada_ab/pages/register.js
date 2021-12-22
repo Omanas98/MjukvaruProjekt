@@ -36,7 +36,7 @@ function register() {
             email: `${event.target.email.value}`,
             personNummer: `${event.target.cpr.value}`,
             password: `${event.target.password.value}`,
-            role: "Customer",
+            role: "customer",
           }),
         });
         router.push("/login");

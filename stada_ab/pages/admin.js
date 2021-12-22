@@ -2,6 +2,16 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 
 function register() {
+
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
+
+      router.push("/login");
+    }
+  }
+
+
   const router = useRouter();
   const submitContact = async (event) => {
     event.preventDefault();

@@ -2,6 +2,13 @@ import BookingCard from "../components/BookingCard";
 import { MongoClient } from "mongodb";
 
 function allBookings(props) {
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
+
+      router.push("/login");
+    }
+  }
   return (
     <div className="page-body user-card mt-5 mb-5">
       <div>
@@ -10,7 +17,7 @@ function allBookings(props) {
           {props.bookings.map((booking) => {
             return (
               <div>
-                <BookingCard booking={booking} cleaners={props.cleaners} />
+                <BookingCard allBookings={props.bookings} booking={booking} cleaners={props.cleaners} />
               </div>
             );
           })}
@@ -40,6 +47,7 @@ export async function getServerSideProps() {
   return {
     props: {
       bookings: bookningar.map((meetup) => ({
+        endTime: meetup.endTime,
         title: meetup.title,
         address: meetup.adress,
         description: meetup.description,

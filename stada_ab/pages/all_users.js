@@ -1,6 +1,14 @@
 import UserCard from "../components/user-card";
 
 export default function all_users({ data }) {
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
+
+      router.push("/login");
+    }
+  }
+
   return (
     <div className="page-body user-card mt-5 mb-5">
       <div>
@@ -22,7 +30,7 @@ export default function all_users({ data }) {
 
           {data.map((user) => {
             if (user.role == "Cleaner") {
-              return <UserCard user={user} />
+              return <UserCard user={user} />;
             }
           })}
           <hr />
@@ -47,7 +55,7 @@ export default function all_users({ data }) {
 
           {data.map((user) => {
             if (user.role == "Customer") {
-              return <UserCard user={user} />
+              return <UserCard user={user} />;
             }
           })}
           <hr />

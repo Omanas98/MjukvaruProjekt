@@ -22,7 +22,7 @@ function Header() {
           </Link>
         </div>
         <div className="navbar navbar-expand-sm navbar-light w-100 d-flex flex-row-reverse hr-underline">
-          {loginRole(role)}
+          {loginRole()}
         </div>
       </nav>
       <hr />
@@ -32,8 +32,13 @@ function Header() {
 
 export default Header;
 
-function loginRole(role) {
-  switch (role) {
+function loginRole() {
+  let rolefromLS;
+  if (typeof window !== "undefined") {
+    rolefromLS = localStorage.getItem("role");
+  }
+
+  switch (rolefromLS) {
     case "Admin":
       return (
         <div className="navbar-nav">
@@ -52,7 +57,9 @@ function loginRole(role) {
           <Link className="nav-link" href="/all_users">
             Lista Användarna
           </Link>
-          <a href="/login">Logga ut</a>
+          <a onClick={handleLogout} href="/login">
+            Logga ut
+          </a>
         </div>
       );
       break;
@@ -65,7 +72,9 @@ function loginRole(role) {
           <Link className="nav-link" href="/my_bookings">
             Mina Städningar
           </Link>
-          <a href="/login">Logga ut</a>
+          <a onClick={handleLogout} href="/login">
+            Logga ut
+          </a>
         </div>
       );
       break;
@@ -78,7 +87,9 @@ function loginRole(role) {
           <Link className="nav-link" href="/my_bookings">
             Mina Städningar
           </Link>
-          <a href="/login">Logga ut</a>
+          <a onClick={handleLogout} href="/login">
+            Logga ut
+          </a>
         </div>
       );
       break;
@@ -94,5 +105,14 @@ function loginRole(role) {
         </div>
       );
       break;
+  }
+
+  function handleLogout() {
+    localStorage.removeItem("inne");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
+    localStorage.removeItem("name");
+
+    console.log("deleteed LS");
   }
 }

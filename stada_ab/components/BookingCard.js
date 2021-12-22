@@ -1,14 +1,29 @@
-function Booking({ booking, cleaners }) {
+import { toast } from "react-toastify";
+
+function Booking({ booking, cleaners, allBookings }) {
+ 
+
   async function addCleanerHandler(event) {
     event.preventDefault();
-    console.log(event);
+
+    allBookings.map(bookingHandler => {
+      if(bookingHandler.endTime != "" && bookingHandler.cleaner != "" && event.target.cleaner.value == bookingHandler.cleaner){
+        if(parseFloat(booking.time) <= parseFloat(bookingHandler.time) && parseFloat(event.target.endTime.value) >= parseFloat(bookingHandler.endTime)){
+          console.log("Städare är redan bokad!");
+          toast.error("Städare är redan bokad!");
+         
+        }
+      }
+    })
 
     let id = `${booking.id}`;
-    let cleaner = `${event.target.value}`;
+    let cleaner = `${event.target.cleaner.value}`;
+    let endTime = `${event.target.endTime.value}`;
 
     let data = {
       id: id,
       cleaner: cleaner,
+      endTime: endTime,
     };
 
     const response = await fetch("/api/bookings/Bookings", {
@@ -33,18 +48,19 @@ function Booking({ booking, cleaners }) {
 
       <div className="col-2 ">
         <div className="row ">
-          <select
-            onChange={addCleanerHandler}
-            id="val"
-            className=" col-12  btn-danger "
-          >
-            <option>
-              {booking.cleaner == "" ? "Välj Städare" : booking.cleaner}
-            </option>
-            {cleaners.map((cleaner) => {
-              return <option value={cleaner.name}>{cleaner.name}</option>;
-            })}
-          </select>
+          <form onSubmit={addCleanerHandler}>
+            <select id="cleaner" className=" col-12  btn-danger ">
+              <option>
+                {booking.cleaner == "" ? "Välj Städare" : booking.cleaner}
+              </option>
+
+              {cleaners.map((cleaner) => {
+                return <option value={cleaner.name}>{cleaner.name}</option>;
+              })}
+            </select>
+            {booking.endTime == "" ? <input id="endTime" type="time"></input> : <h6>Slut tid: {booking.endTime}</h6>}  
+            <button type="submit">submit</button>
+          </form>
         </div>
       </div>
       <hr />

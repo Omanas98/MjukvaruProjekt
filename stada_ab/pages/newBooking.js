@@ -6,8 +6,14 @@ function newBooking() {
   const router = useRouter();
   const { inne, email } = useContext(LoginContext);
 
-  if (!inne) {
-    router.push("/login");
+  localStorage.getItem("email");
+
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("inne")) {
+      console.log(!localStorage.getItem("inne"));
+
+      router.push("/login");
+    }
   }
 
   async function addBookingHandler(event) {
@@ -24,8 +30,9 @@ function newBooking() {
       adress: adress,
       date: date,
       description: description,
-      userName: email,
+      userName: localStorage.getItem("email"),
       time: time,
+      endTime: "",
       cleaner: "",
     };
 
