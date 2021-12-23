@@ -81,7 +81,7 @@ function newBooking() {
 
         <section className="mb-4">
           <input id="time" type="time" min="10:00" max="18:00" placeholder=" " required></input>
-          <label htmlFor="time">Tid</label>
+          <label htmlFor="time" >Välj tid mellan 10:00 och 18:00</label>
         </section>
 
         <section className="mb-4">
