@@ -6,7 +6,7 @@ function newBooking() {
   const router = useRouter();
   const { inne, email } = useContext(LoginContext);
 
-  localStorage.getItem("email");
+  let min = new Date().toLocaleDateString();
 
   if (typeof window !== "undefined") {
     if (!localStorage.getItem("inne")) {
@@ -69,12 +69,18 @@ function newBooking() {
         </section>
 
         <section className="mb-4">
-          <input id="date" type="date" placeholder=" " required></input>
+          <input
+            id="date"
+            type="date"
+            min={min}
+            placeholder=" "
+            required
+          ></input>
           <label htmlFor="date">Datum</label>
         </section>
 
         <section className="mb-4">
-          <input id="time" type="time" placeholder=" " required></input>
+          <input id="time" type="time" min="10:00" max="18:00" placeholder=" " required></input>
           <label htmlFor="time">Tid</label>
         </section>
 

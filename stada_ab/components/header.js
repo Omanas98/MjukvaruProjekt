@@ -46,7 +46,7 @@ function loginRole() {
             Boka städning
           </Link>
           <Link className="nav-link" href="/admin">
-            Admin
+            Registrera
           </Link>
           <Link className="nav-link" href="/my_bookings">
             Mina Städningar
