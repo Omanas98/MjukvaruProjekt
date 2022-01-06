@@ -39,7 +39,7 @@ export default function tjanster(props) {
           );
   }
   return (
-    <div className="page-body container">
+    <div className="page-body container mb-5">
       <div className="row">
         <h1>Dina bokningar</h1>
         {userBookings.map((booking) => {
