@@ -3,8 +3,8 @@ function Footer() {
     <footer className="bg-dark text-center text-white">
       <div className="container p-4">
         <div className="text-center p-3">
-          © 2021 Copyright:
-          <a className="text-white"> Abbas, Omar och Hamodi</a>
+          © 2022 Copyright:
+          <a className="text-white"> </a>
         </div>
       </div>
     </footer>

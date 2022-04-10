@@ -96,12 +96,12 @@ function loginRole() {
     default:
       return (
         <div className="navbar-nav">
-          <Link className="nav-link " href="/register">
-            Registrera
+          {/*  <Link className="nav-link " href="/register">
+            .
           </Link>
           <Link className="nav-link" href="/login">
             Logga in
-          </Link>
+          </Link> */}
         </div>
       );
       break;
